@@ -1,0 +1,148 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 20px;
+            list-style-type: none;
+            padding: 0;
+        }
+        .menu-item {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+        }
+        .menu-item img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #profile-img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>My Website</h1>
+    <nav>
+        <a href="#biography">Biography</a> |
+        <a href="#menu">Menu</a> |
+        <a href="#contact">Contact Us</a>
+    </nav>
+</div>
+
+<div id="biography" class="container">
+    <h2>Biography</h2>
+    <img id="profile-img" src="https://via.placeholder.com/300" alt="Profile Image">
+    <h3 id="name">John Doe</h3>
+    <p id="bio">John Doe is a fictional character...</p>
+    <button onclick="showDetails()">Show Details</button>
+    <div id="details" style="display: none;">
+        <h4>Contact Information</h4>
+        <ul>
+            <li>Email: john@example.com</li>
+            <li>Phone: 123-456-7890</li>
+            <li>Location: City, Country</li>
+        </ul>
+    </div>
+</div>
+
+<div id="menu" class="container" style="display: none;">
+    <h2>Cafeteria Menu</h2>
+    <ul class="menu">
+        <li class="menu-item">
+            <img src="https://via.placeholder.com/200" alt="Item 1">
+            <h3>Item 1</h3>
+            <p>Description of Item 1</p>
+            <p>Price: $5.99</p>
+        </li>
+        <li class="menu-item">
+            <img src="https://via.placeholder.com/200" alt="Item 2">
+            <h3>Item 2</h3>
+            <p>Description of Item 2</p>
+            <p>Price: $7.99</p>
+        </li>
+        <!-- Add more menu items as needed -->
+    </ul>
+</div>
+
+<div id="contact" class="container" style="display: none;">
+    <h2>Contact Us</h2>
+    <p>For any inquiries or feedback, feel free to contact us:</p>
+    <ul>
+        <li>Email: info@cafeteria.com</li>
+        <li>Phone: 123-456-7890</li>
+        <li>Address: 123 Main Street, City, Country</li>
+    </ul>
+</div>
+
+<script>
+    function showDetails() {
+        var details = document.getElementById("details");
+        if (details.style.display === "none") {
+            details.style.display = "block";
+        } else {
+            details.style.display = "none";
+        }
+    }
+
+    // Function to switch between biography and cafeteria sections
+    function showSection(sectionId) {
+        var biography = document.getElementById("biography");
+        var menu = document.getElementById("menu");
+        var contact = document.getElementById("contact");
+
+        if (sectionId === "biography") {
+            biography.style.display = "block";
+            menu.style.display = "none";
+            contact.style.display = "none";
+        } else if (sectionId === "menu") {
+            biography.style.display = "none";
+            menu.style.display = "block";
+            contact.style.display = "none";
+        } else if (sectionId === "contact") {
+            biography.style.display = "none";
+            menu.style.display = "none";
+            contact.style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>
